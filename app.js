@@ -1,5 +1,5 @@
 const express = require('express');
-const https = require('https')
+const dotenv = require('dotenv').config(); //Requiring the enviroment config
 const mailchimp = require('@mailchimp/mailchimp_marketing');
 const app = express();
 const port = process.env.PORT || 3000;
@@ -13,8 +13,8 @@ app.get('/', (req, res) => {
 
 // Mailchimp Configuration 
 mailchimp.setConfig({
-    apiKey: 'd5a7781522c20c7a01195bd7aa313323-us17',
-    server: 'us17'
+    apiKey: process.env.API_KEY,
+    server: process.env.API_SERVER
 });
 
 app.post('/', (req, res) => {
