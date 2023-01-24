@@ -1,6 +1,8 @@
 const express = require('express');
+const https = require('https')
 const mailchimp = require('@mailchimp/mailchimp_marketing');
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.use(express.static(__dirname)); //This serves the static files of the webpage
 app.use(express.urlencoded({extended: true}))
@@ -44,6 +46,6 @@ app.post('/failure', (req, res) => {
     res.redirect('/');
 })
 
-app.listen(process.env.PORT || 3000 , () => {
-    console.log(`Server running on port 3000`);
+app.listen(port , () => {
+    console.log(`Server running on port ${port}`);
 })
