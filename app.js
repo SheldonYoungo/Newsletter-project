@@ -19,7 +19,7 @@ mailchimp.setConfig({
 
 app.post('/', (req, res) => {
     
-    const listId = 'e8b4cd6db1';
+    const listId = process.env.API_LIST_ID;
     // Creating an object with the users data
     const subscribingUser = {
         firstName: req.body.fName,
