@@ -1,7 +1,5 @@
-const https = require('node:https');
 const express = require('express');
 const mailchimp = require('@mailchimp/mailchimp_marketing');
-const { response } = require('express');
 const app = express();
 
 app.use(express.static(__dirname)); //This serves the static files of the webpage
